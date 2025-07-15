@@ -1,0 +1,94 @@
+---
+title: "R4DSCh2"
+author: "TomasGarcia"
+date: "2025-07-13"
+output: html_document
+---
+
+Basic Calculations
+```{r}
+1 / 200 * 30
+
+(59 + 73 + 2) / 3
+
+sin(pi / 2)
+
+```
+
+Create objects
+
+```{r}
+x <- 3 * 4
+x
+```
+
+*C*ombine elements in a vector
+```{r}
+primes <- c(2, 3, 5, 7, 11, 13)
+
+primes * 2
+
+primes - 1
+```
+
+Names notations
+
+i_use_snake_case
+otherPeopleUseCamelCase
+some.people.use.periods
+And_aFew.People_RENOUNCEconvention
+```{r}
+this_is_a_really_long_name <- 2.5
+this_is_a_really_long_name
+
+r_rocks <- 2^3
+
+seq(from =1, to = 10)
+```
+
+
+```{r}
+x <- "Hello"
+```
+
+
+Exercises
+1Why does this code not work?
+
+```{r}
+my_variable <- 10
+my_varıable
+
+#> Error: object 'my_varıable' not found
+```
+Não é o mesmo texto, ao invés do i não há o pingo
+
+2Tweak each of the following R commands so that they run correctly:
+```{r}
+library(tidyverse)
+
+ggplot(data = mpg, aes(x = displ, y = hwy)) + 
+  geom_point(mapping = aes(x = displ, y = hwy)) +
+  geom_smooth(method = lm)
+```
+3Press Option + Shift + K / Alt + Shift + K. What happens? How can you get to the same place using the menus?
+
+It shows the Keyboard Shortcut Reference. You can access it in the meny going to "Help" in the Left Up part of the screen. 
+
+4Let’s revisit an exercise from the Section 1.6. Run the following lines of code. Which of the two plots is saved as mpg-plot.png? Why?
+
+```{r}
+my_bar_plot <- ggplot(mpg, aes(x = class)) +
+  geom_bar()
+my_scatter_plot <- ggplot(mpg, aes(x = cty, y = hwy)) +
+  geom_point()
+my_scatter_plot
+ggsave(filename = "mpg-plot2.png", plot = my_bar_plot)
+
+
+```
+
+The my-bar_plot is shown, because we specified we wanted to save this plot as the second argument of ggsave
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
